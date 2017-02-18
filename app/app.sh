@@ -1,22 +1,25 @@
 #!/bin/bash
 
 # Declare arrays
-declare -a hackNames=('encode' 'syntax' 'sql-inject' 'parse-error' 'kernel-panic')
-declare -a fileTypes=('doc' 'xls' 'sql' 'bmp' '7z' 'deb' 'dat' 'sql' 'coffee' 'py')
-declare -a videoTypes=('mkv' 'avi' 'mov' 'avi' 'flv' 'm4v')
+declare -a terms=('encode' 'syntax' 'sql-inject' 'parse-error' 'kernel-panic')
+declare -a video=('mkv' 'avi' 'mov' 'avi' 'flv' 'm4v' 'mp4' 'mpeg' 'wmv' 'qt')
 
-numOfHackNames=${#hackNames[@]}
-numOfFileTypes=${#fileTypes[@]}
-numOfVideoTypes=${#videoTypes[@]}
+x()
+{
+  # Assign argument to variable in order to access more than first item.
+  array=($@)
+  randIndex=$(($RANDOM % $#))
+  randItem=${array[$randIndex]}
 
-randomHackNameIndex=$(($RANDOM % $numOfHackNames))
-randomFileTypeIndex=$(($RANDOM % $numOfFileTypes))
-randomVideoTypeIndex=$(($RANDOM % $numOfVideoTypes))
+  echo $randItem
+}
 
+# Get random seson and episode
 rs=$((1 + RANDOM % 2))
 re=$((RANDOM % 12))
-rhn=${hackNames[$randomHackNameIndex]}
-rfti=${fileTypes[$randomFileTypeIndex]}
-rvti=${videoTypes[$randomVideoTypeIndex]}
 
-echo 'eps'$rs'.'$re'_'$ri$rhn'.'$rfti
+# Put it all together
+result='eps'$rs'.'$re'_'$(x ${terms[@]})'.'$(x ${video})
+
+# echo result variable
+echo $result
