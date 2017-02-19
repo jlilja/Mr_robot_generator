@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Declare arrays
-declare -a terms=('encode' 'syntax' 'sql-inject' 'parse-error' 'kernel-panic')
-declare -a video=('mkv' 'avi' 'mov' 'avi' 'flv' 'm4v' 'mp4' 'mpeg' 'wmv' 'qt')
+terms=$(grep -i '"*",' terms.json | sed 's/",//g' | sed 's/"//g')
+video=$(grep -i '"*",' video.json | sed 's/",//g' | sed 's/"//g')
 
 x()
 {
