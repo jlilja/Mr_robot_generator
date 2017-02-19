@@ -1,0 +1,23 @@
+{
+  "video": [
+    "mkv",
+    "avi",
+    "mov",
+    "avi",
+    "flv",
+    "m4v",
+    "mp4",
+    "mpeg",
+    "wmv",
+    "qt",
+    "asf",
+    "AVCHD",
+    "SWF",
+    "webm",
+    "vob",
+    "gifv",
+    "yuv",
+    "m2v",
+    "roq"
+  ]
+}
